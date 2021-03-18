@@ -22,6 +22,21 @@ def show_page(page, title):
     #return flask.render_template(page, page_title=title, user=get_user())
     return flask.render_template(page, page_title=title)
 
+@app.route('/ang')
+def ang():
+    return flask.render_template('ang.html')
+
+# want to focus on making app RESTful and CRUD
+# Create Read Update Delete (the 4 main things your app should be able to do)
+# on top of that, using REST commands POST, GET, PUT, DELETE match CRUD
+
+# REST
+# Uniform interface (UI)- resources should be uniquely identifiable through a single url
+# Clear client/server break. UI and request-gathering (client). Data access, workload management (Server)
+# Stateless - all operations stateless, any state management takes place on client side
+# Cache resources from requests so that 2 identical requests do not have to be made
+# REST alows for multiple layers of servers
+# Server sends back static resource as XML/JSON, sometimes as executable code
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
